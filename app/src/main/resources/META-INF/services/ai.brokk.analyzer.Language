@@ -1,0 +1,12 @@
+ai.brokk.analyzer.JavaLanguage
+ai.brokk.analyzer.PythonLanguage
+ai.brokk.analyzer.RustLanguage
+ai.brokk.analyzer.scala.ScalaLanguage
+ai.brokk.analyzer.CSharpLanguage
+ai.brokk.analyzer.JavaScriptLanguage
+ai.brokk.analyzer.CppLanguage
+ai.brokk.analyzer.GoLanguage
+ai.brokk.analyzer.PhpLanguage
+ai.brokk.analyzer.SqlLanguage
+ai.brokk.analyzer.TypeScriptLanguage
+ai.brokk.analyzer.NoneLanguage
