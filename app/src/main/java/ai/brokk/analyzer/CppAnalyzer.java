@@ -75,7 +75,7 @@ public class CppAnalyzer extends TreeSitterAnalyzer {
     }
 
     public CppAnalyzer(IProject project, ProgressListener listener) {
-        super(project, Languages.CPP_TREESITTER, listener);
+        super(project, Languages.C_CPP, listener);
 
         this.parserCache = ThreadLocal.withInitial(() -> {
             var parser = new TSParser();
@@ -89,7 +89,7 @@ public class CppAnalyzer extends TreeSitterAnalyzer {
     }
 
     private CppAnalyzer(IProject project, AnalyzerState state, ProgressListener listener) {
-        super(project, Languages.CPP_TREESITTER, state, listener);
+        super(project, Languages.C_CPP, state, listener);
         this.parserCache = ThreadLocal.withInitial(() -> {
             var parser = new TSParser();
             parser.setLanguage(createTSLanguage());

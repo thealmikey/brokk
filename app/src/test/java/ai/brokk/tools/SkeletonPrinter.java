@@ -59,7 +59,7 @@ public class SkeletonPrinter {
             case "JavaScript" -> fileName.endsWith(".js") || fileName.endsWith(".jsx");
             case "Java" -> fileName.endsWith(".java");
             case "Python" -> fileName.endsWith(".py");
-            case "CPP_TREESITTER" ->
+            case "C_CPP" ->
                 fileName.endsWith(".cpp")
                         || fileName.endsWith(".cc")
                         || fileName.endsWith(".cxx")
@@ -205,7 +205,7 @@ public class SkeletonPrinter {
             case "javascript", "js" -> Languages.JAVASCRIPT;
             case "java" -> Languages.JAVA;
             case "python", "py" -> Languages.PYTHON;
-            case "cpp", "c++" -> Languages.CPP_TREESITTER;
+            case "cpp", "c++" -> Languages.C_CPP;
             default -> null;
         };
     }
@@ -390,7 +390,7 @@ public class SkeletonPrinter {
             case "JavaScript" -> new JavascriptAnalyzer(project);
             case "Java" -> new JavaAnalyzer(project);
             case "Python" -> new PythonAnalyzer(project);
-            case "CPP_TREESITTER" -> new CppAnalyzer(project);
+            case "C_CPP" -> new CppAnalyzer(project);
             default -> null;
         };
     }
