@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 public class RustLanguage implements Language {
     private final Set<String> extensions = Set.of("rs");
 
-    RustLanguage() {}
+    public RustLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

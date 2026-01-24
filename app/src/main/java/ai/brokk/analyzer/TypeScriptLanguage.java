@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 public class TypeScriptLanguage implements Language {
     private final Set<String> extensions = Set.of("ts", "tsx");
 
-    TypeScriptLanguage() {}
+    public TypeScriptLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
 public class JavaLanguage implements Language {
     private final Set<String> extensions = Set.of("java");
 
-    JavaLanguage() {}
+    public JavaLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

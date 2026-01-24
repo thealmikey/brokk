@@ -7,7 +7,7 @@ import java.util.Set;
 public class NoneLanguage implements Language {
     private final Set<String> extensions = Collections.emptySet();
 
-    NoneLanguage() {}
+    public NoneLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

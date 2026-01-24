@@ -11,6 +11,8 @@ public class ScalaLanguage implements Language {
 
     private final Set<String> extensions = Set.of("scala");
 
+    public ScalaLanguage() {}
+
     @Override
     public Set<String> getExtensions() {
         return extensions;

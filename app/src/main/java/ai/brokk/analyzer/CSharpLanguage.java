@@ -6,7 +6,7 @@ import java.util.Set;
 public class CSharpLanguage implements Language {
     private final Set<String> extensions = Set.of("cs");
 
-    CSharpLanguage() {}
+    public CSharpLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

@@ -6,7 +6,7 @@ import java.util.Set;
 public class SqlLanguage implements Language {
     private final Set<String> extensions = Set.of("sql");
 
-    SqlLanguage() {}
+    public SqlLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

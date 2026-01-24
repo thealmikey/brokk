@@ -6,7 +6,7 @@ import java.util.Set;
 public class GoLanguage implements Language {
     private final Set<String> extensions = Set.of("go");
 
-    GoLanguage() {}
+    public GoLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

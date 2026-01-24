@@ -7,7 +7,7 @@ import java.util.Set;
 public class PhpLanguage implements Language {
     private final Set<String> extensions = Set.of("php", "phtml", "php3", "php4", "php5", "phps");
 
-    PhpLanguage() {}
+    public PhpLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

@@ -6,7 +6,7 @@ import java.util.Set;
 public class CppLanguage implements Language {
     private final Set<String> extensions = Set.of("c", "h", "cpp", "hpp", "cc", "hh", "cxx", "hxx");
 
-    CppLanguage() {}
+    public CppLanguage() {}
 
     @Override
     public Set<String> getExtensions() {

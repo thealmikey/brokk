@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 public class JavaScriptLanguage implements Language {
     private final Set<String> extensions = Set.of("js", "mjs", "cjs", "jsx");
 
-    JavaScriptLanguage() {}
+    public JavaScriptLanguage() {}
 
     @Override
     public Set<String> getExtensions() {
