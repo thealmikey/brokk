@@ -1,5 +1,8 @@
 package ai.brokk.analyzer;
 
+import ai.brokk.gui.Chrome;
+import ai.brokk.gui.dependencies.DependenciesPanel;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -223,6 +226,54 @@ public class Languages {
         @Override
         public IAnalyzer loadAnalyzer(ai.brokk.project.IProject project, IAnalyzer.ProgressListener listener) {
             return delegate().loadAnalyzer(project, listener);
+        }
+
+        @Override
+        public Path getStoragePath(ai.brokk.project.IProject project) {
+            return delegate().getStoragePath(project);
+        }
+
+        @Override
+        public void saveAnalyzer(IAnalyzer analyzer, ai.brokk.project.IProject project) {
+            delegate().saveAnalyzer(analyzer, project);
+        }
+
+        @Override
+        public List<Path> getDependencyCandidates(ai.brokk.project.IProject project) {
+            return delegate().getDependencyCandidates(project);
+        }
+
+        @Override
+        public ImportSupport getDependencyImportSupport() {
+            return delegate().getDependencyImportSupport();
+        }
+
+        @Override
+        public Set<String> getSearchPatterns(CodeUnitType type) {
+            return delegate().getSearchPatterns(type);
+        }
+
+        @Override
+        public List<DependencyCandidate> listDependencyPackages(ai.brokk.project.IProject project) {
+            return delegate().listDependencyPackages(project);
+        }
+
+        @Override
+        public boolean importDependency(
+                Chrome chrome,
+                DependencyCandidate pkg,
+                @Nullable DependenciesPanel.DependencyLifecycleListener lifecycle) {
+            return delegate().importDependency(chrome, pkg, lifecycle);
+        }
+
+        @Override
+        public boolean isAnalyzed(ai.brokk.project.IProject project, Path pathToImport) {
+            return delegate().isAnalyzed(project, pathToImport);
+        }
+
+        @Override
+        public String toString() {
+            return delegate().toString();
         }
     }
 }
