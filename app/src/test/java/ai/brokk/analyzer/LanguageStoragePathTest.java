@@ -34,9 +34,8 @@ public class LanguageStoragePathTest {
                 "NONE");
 
         Language[] values = Languages.values();
-        Set<String> discoveredInternalNames = Arrays.stream(values)
-                .map(Language::internalName)
-                .collect(Collectors.toUnmodifiableSet());
+        Set<String> discoveredInternalNames =
+                Arrays.stream(values).map(Language::internalName).collect(Collectors.toUnmodifiableSet());
 
         assertEquals(expectedInternalNames, discoveredInternalNames);
 
@@ -70,7 +69,8 @@ public class LanguageStoragePathTest {
     void languagesNone_isAlwaysAvailable() {
         assertNotNull(Languages.NONE);
         assertEquals("NONE", Languages.NONE.internalName());
-        assertTrue(Arrays.stream(Languages.values()).anyMatch(l -> l.internalName().equals("NONE")));
+        assertTrue(
+                Arrays.stream(Languages.values()).anyMatch(l -> l.internalName().equals("NONE")));
     }
 
     @Test

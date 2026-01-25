@@ -27,14 +27,15 @@ public class Languages {
     private static final Map<String, Language> BY_INTERNAL_NAME;
 
     static {
-        List<ServiceLoader.Provider<Language>> providers = ServiceLoader.load(Language.class)
-                .stream()
-                .toList();
+        List<ServiceLoader.Provider<Language>> providers =
+                ServiceLoader.load(Language.class).stream().toList();
 
         Map<String, ServiceLoader.Provider<Language>> providersByInternalName = new LinkedHashMap<>();
         for (ServiceLoader.Provider<Language> provider : providers) {
             String inferredInternalName = inferInternalName(provider.type());
-            String internalName = inferredInternalName != null ? inferredInternalName : provider.get().internalName();
+            String internalName = inferredInternalName != null
+                    ? inferredInternalName
+                    : provider.get().internalName();
             providersByInternalName.putIfAbsent(internalName, provider);
         }
 
@@ -66,7 +67,8 @@ public class Languages {
 
         for (Map.Entry<String, Language> entry : BY_INTERNAL_NAME.entrySet()) {
             String internalName = entry.getKey();
-            if (!internalName.equals("NONE") && ordered.stream().noneMatch(l -> l.internalName().equals(internalName))) {
+            if (!internalName.equals("NONE")
+                    && ordered.stream().noneMatch(l -> l.internalName().equals(internalName))) {
                 ordered.add(entry.getValue());
             }
         }
