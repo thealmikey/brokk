@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.ServiceLoader;
 import java.util.Set;
 
+import org.jetbrains.annotations.Nullable;
+
 public class Languages {
     public static final Language C_SHARP;
     public static final Language JAVA;
@@ -103,7 +105,7 @@ public class Languages {
         return lang != null ? lang : NONE;
     }
 
-    private static String inferInternalName(Class<? extends Language> type) {
+    private static @Nullable String inferInternalName(Class<? extends Language> type) {
         return switch (type.getSimpleName()) {
             case "JavaLanguage" -> "JAVA";
             case "PythonLanguage" -> "PYTHON";
@@ -179,7 +181,7 @@ public class Languages {
     private static final class LazyLanguage implements Language {
         private final String internalName;
         private final ServiceLoader.Provider<Language> provider;
-        private volatile Language delegate;
+        private volatile @Nullable Language delegate;
 
         private LazyLanguage(String internalName, ServiceLoader.Provider<Language> provider) {
             this.internalName = internalName;
