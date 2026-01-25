@@ -49,7 +49,7 @@ jobs:
       - name: Get JAR filename
         id: jar
         run: |
-          JAR_FILE=$(find app/build/libs -name "brokk-*.jar" | head -1)
+          JAR_FILE=$(find app/build/libs -name "brokk-spi-*.jar" | head -1)
           JAR_NAME=$(basename "$JAR_FILE")
           echo "jar_file=$JAR_FILE" >> $GITHUB_OUTPUT
           echo "jar_name=$JAR_NAME" >> $GITHUB_OUTPUT
