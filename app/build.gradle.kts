@@ -13,7 +13,7 @@ plugins {
     alias(libs.plugins.node)
 }
 
-group = "ai.brokk"
+group = "ai.brokk.spi"
 
 java {
     toolchain {
@@ -23,6 +23,7 @@ java {
 
 application {
     mainClass.set("ai.brokk.Brokk")
+    applicationName = "brokk-spi"
     applicationDefaultJvmArgs = buildList {
         // enable feature flags; JavaExec baseline supplies other args
         add("-Dbrokk.servicetiers=true")
@@ -643,7 +644,7 @@ tasks.register<JavaExec>("runTreeSitterRepoRunner") {
 }
 
 tasks.shadowJar {
-    archiveBaseName.set("brokk")
+    archiveBaseName.set("brokk-spi")
     archiveClassifier.set("")
     mergeServiceFiles()
     isZip64 = true  // Enable zip64 for large archives
